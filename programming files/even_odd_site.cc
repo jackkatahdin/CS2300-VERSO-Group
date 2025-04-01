@@ -3,10 +3,17 @@
 using namespace std;
 
 int main() {
+    // file input
     ofstream file;
     file.open("numbers.html");
+
+    // reads title of html file
     file << "<html>\n<head>\n<title>List of Numbers</title>\n</head>\n<body>\n";
+
+    // reads headers of table
     file << "<table>\n<tr><th>Even Numbers</th><th>Odd Numbers</th></tr>\n";
+
+    // iterates through numbers.html and finds odd and even numbers
     for (int i = 1; i <= 50; i++) {
         if (i % 2 == 0) {
             file << "<tr><td>" << i << "</td><td></td></tr>\n";
@@ -15,6 +22,7 @@ int main() {
             file << "<tr><td></td><td>" << i << "</td></tr>\n";
         }
     }
+
     file << "</table>\n</body>\n</html>";
     file.close();
     ifstream input("numbers.html");
